@@ -21,61 +21,65 @@ Esportare quindi il diagramma in png, caricarlo in un file html e pushare tutto 
 
 ## departments
 
-- id
-- name
-- students_id
+- id INT PK AI       
+- name VARCHAR(50) NN
 
 
 ## courses_degree
 
--id
--name
--students_id
+-id INT PK AI
+-name VARCHAR(50) NN
+-department_id INT NN
 
 
 ## course_subjects
 
--id
--name
--courses_degree_id
--teachers_id
--students_id
+-id INT PK AI
+-name VARCHAR(50) NN
+-courses_degree_id INT NN
+-teachers_id INT NN
 
 
 ## teachers
 
--id
--name
--surname
--dob
--contract_date
--phone
--email
--course_subject_id
-
-
-## exam_calls
-
--id
--students_id
--course_subject_id
--teachers_id
--date
--outcome
-
+-id INT PK AI
+-name VARCHAR(50) NN
+-surname VARCHAR(50) NN
+-dob DATE NULL
+-contract_date DATE NULL
+-phone VARCHAR(20) NULL
+-email VARCHAR(50) NULL
+-course_subject_id INT NULL
 
 ## students
 
--id
--name
--surname
--course_subject_id
--course_degree_id
--deparments_id
--dob
--email
--phone
--votes
+-id INT PK AI
+-name VARCHAR(50) NN
+-surname VARCHAR(50) NN
+-course_degree_id INT NULL
+-dob DATE NULL
+-email VARCHAR(50) NN
+-phone VARCHAR(20) NULL
+
+
+## exam_appeal
+
+-id INT PK AI
+-students_id INT NN
+-course_subject_id INT NN
+-teachers_id INT NULL
+-date DATE NULL
+
+## exam_votes
+
+-id INT PK AI 
+-students_id INT NN
+-exam_appeal_id INT NN
+-outcome FLOAT(2,1) NN
+
+
+
+
 
 
   
